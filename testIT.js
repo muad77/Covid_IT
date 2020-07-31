@@ -15,7 +15,7 @@
             dataType: tableau.dataTypeEnum.string
         }, {
            id: "ricoverati_con_sintomi",
-           alias: "Malati",
+           alias: "Zarażeni",
            dataType: tableau.dataTypeEnum.int
         },
         {
@@ -54,7 +54,7 @@
           dataType: tableau.dataTypeEnum.int
 }, {
           id: "deceduti",
-          alias:"Morti",
+          alias:"Zgony",
          dataType: tableau.dataTypeEnum.int
 },
  {
