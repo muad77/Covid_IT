@@ -63,7 +63,7 @@
           dataType: tableau.dataTypeEnum.int
 }, {
           id: "tamponi",
-          alias:"Tamponi",
+          alias:"Testowani",
           dataType: tableau.dataTypeEnum.int
 }];
         var tableSchema = {
