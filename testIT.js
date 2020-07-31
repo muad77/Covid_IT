@@ -11,7 +11,7 @@
             dataType: tableau.dataTypeEnum.date
         }, {
             id: "stato",
-            alias: "stato",
+            alias: "Stan",
             dataType: tableau.dataTypeEnum.string
         }, {
            id: "ricoverati_con_sintomi",
@@ -20,37 +20,37 @@
         },
         {
             id: "terapia_intensiva",
-            alias:"terapia_intensiva",
+            alias:"Intensywna terapia",
             dataType: tableau.dataTypeEnum.int
         },
         {
            id: "totale_ospedalizzati",
-           alias:"totale_ospedalizzati",
+           alias:"Ogółem hospitalizowani",
           dataType: tableau.dataTypeEnum.int
       },
     {
           id: "isolamento_domiciliare",
-          alias:"isolamento_domiciliare",
+          alias:"Izolacja domowa",
           dataType: tableau.dataTypeEnum.int
     },
     {
            id: "totale_positivi",
-           alias:"totale_positivi",
+           alias:"Ogółem zarażeni",
            dataType: tableau.dataTypeEnum.int
   },
   {
           id: "variazione_totale_positivi",
-           alias:"variazione_totale_positivi",
+           alias:"Całkowita zmiana",
           dataType: tableau.dataTypeEnum.int
 },
 {
          id: "nuovi_positivi",
-         alias:"Nuovi_positivi",
+         alias:"Nowi",
           dataType: tableau.dataTypeEnum.int
 },
 {
           id: "dimessi_guariti",
-          alias:"Dimessi",
+          alias:"Wyzdrowieni",
           dataType: tableau.dataTypeEnum.int
 }, {
           id: "deceduti",
@@ -59,7 +59,7 @@
 },
  {
          id: "totale_casi",
-          alias:"Totale_casi",
+          alias:"Ilość całkowita",
           dataType: tableau.dataTypeEnum.int
 }, {
           id: "tamponi",
