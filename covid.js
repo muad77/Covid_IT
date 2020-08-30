@@ -9,36 +9,20 @@
             alias: "Data",
             dataType: tableau.dataTypeEnum.date
         },{
-            id: "day",
-            alias: "Stan",
-            dataType: tableau.dataTypeEnum.int
-        },{
-            id: "month",
-            alias: "Zarażeni",
-            dataType: tableau.dataTypeEnum.int
-        },{
-            id: "year",
-            alias: "Intensywna terapia",
-            dataType: tableau.dataTypeEnum.int
-        },{
             id: "cases",
             alias: "Ogółem hospitalizowani",
             dataType: tableau.dataTypeEnum.int
         },{
             id: "deaths",
-            alias: "Izolacja domowa",
+            alias: "Zgony",
             dataType: tableau.dataTypeEnum.int
         },{
             id: "countriesAndTerritories",
             alias: "Nazwa kraju",
             dataType: tableau.dataTypeEnum.string
         },{
-            id: "geoID",
-            alias: "geoID",
-            dataType: tableau.dataTypeEnum.string
-        },{
             id: "countryterritoryCode",
-            alias: "Kod kraju",
+            alias: "Kraj",
             dataType: tableau.dataTypeEnum.string
         },{
             id: "popData2019",
@@ -48,6 +32,10 @@
             id: "continentExp",
             alias: "kontynent",
             dataType: tableau.dataTypeEnum.string
+        },{
+            id: "Cumulative",
+            alias: "Na 1000",
+            dataType: tableau.dataTypeEnum.int
         },
         ];
         var tableSchema = {
@@ -64,24 +52,22 @@
 
         $.getJSON("https://opendata.ecdc.europa.eu/covid19/casedistribution/json/", function(resp) {
             //var list = data.json(),       // what method to call? .feature .ts .list..
-            
-            var data = resp.records,
+           
+            var data = resp.records,        
                  tableData = [];
+           
         console.log(data) 
             // Iterate over the JSON object
             for (var i = 0; i < data.length; i++) {
                 tableData.push({
-                    "dateRep": data[i]["dateRep"],
-                    "day": data[i]["day"],
-                    "month": data[i]["month"],
-                    "years": data[i]["years"],
+                    "dateRep": data[i]["dateRep"],                
                     "cases": data[i]["cases"],
-                    "countriesAndTerritories": data[i]["countriesAndTerritories"],
-                    "geoID": data[i]["geoID"],
-                    "countryterritoryCode": data[i]["ountryterritoryCode"],
+                    "deaths": data[i]["deaths"],
+                    "countriesAndTerritories": data[i]["countriesAndTerritories"],                   
+                    "countryterritoryCode": data[i]["countryterritoryCode"],
                     "popData2019": data[i]["popData2019"],
-                    "continentExp": data[i]["ontinentExp"],                  
-                    
+                    "continentExp": data[i]["continentExp"],                  
+                    "Cumulative": data[i],
                 });
             }
             
