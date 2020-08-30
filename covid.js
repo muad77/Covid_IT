@@ -52,10 +52,10 @@
 
         $.getJSON("https://opendata.ecdc.europa.eu/covid19/casedistribution/json/", function(resp) {
             //var list = data.json(),       // what method to call? .feature .ts .list..
-           
+            
             var data = resp.records,        
                  tableData = [];
-           
+               
         console.log(data) 
             // Iterate over the JSON object
             for (var i = 0; i < data.length; i++) {
@@ -70,7 +70,10 @@
                     "Cumulative": data[i],
                 });
             }
-            
+            var newArray = [].filter(function (el) {
+                return el.countriesAndTerritories = Poland;
+                      
+              });
             table.appendRows(tableData);
             doneCallback();
         });
