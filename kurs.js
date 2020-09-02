@@ -31,19 +31,17 @@
         $.getJSON("http://api.nbp.pl/api/exchangerates/tables/a/today/?format=json", function(resp) {
             //var list = data.json(),       // what method to call? .feature .ts .list..
            
-            var data = resp[0].rates,  
-                 tableData = [];
-           
-        console.log(data) 
-            // Iterate over the JSON object
-            for (var i = 0; i < data.lenght; i++) {
+            let tableData = [];
+            let data = resp[0].rates;
+
+            for (let item of data) {
                 tableData.push({
-                    "currency": data[i]["currency"],                
-                    "code": data[i]["code"],
-                    "mid": data[i]["mid"],
-                });
+                   currency: item['currency'],
+                   code: item['code'],
+                   mid: item['mid']
+              });
             }
-            
+            console.log(data); 
             table.appendRows(tableData);
             doneCallback();
         });
