@@ -1,21 +1,23 @@
 (function() {
-    // Create the connector object
+   
     var myConnector = tableau.makeConnector();
-
-    // Define the schema
     myConnector.getSchema = function(schemaCallback) {
         var cols = [{
             id: "currency",
-            alias: "Tajlandia",
+            alias: "currency",
+            dataType: tableau.dataTypeEnum.string
+        },{
+            id: "code",
+            alias: "code",
             dataType: tableau.dataTypeEnum.string
         },{
             id: "mid",
-            alias: "kurs",
+            alias: "mid",
             dataType: tableau.dataTypeEnum.int
         },
         ];
         var tableSchema = {
-            id: "LUG",
+            id: "NBP",
             alias: "NBP",
             columns: cols
         };
@@ -29,16 +31,16 @@
         $.getJSON("http://api.nbp.pl/api/exchangerates/tables/a/today/?format=json", function(resp) {
             //var list = data.json(),       // what method to call? .feature .ts .list..
            
-            var data = resp,    
+            var data = resp[0].rates,  
                  tableData = [];
            
         console.log(data) 
             // Iterate over the JSON object
-            for (var i = 0; i < data.length; i++) {
+            for (var i = 0; i < data.lenght; i++) {
                 tableData.push({
-                    "bat": data[i]["bat"],                
+                    "currency": data[i]["currency"],                
+                    "code": data[i]["code"],
                     "mid": data[i]["mid"],
-                    
                 });
             }
             
