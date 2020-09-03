@@ -14,6 +14,10 @@
             id: "mid",
             alias: "mid",
             dataType: tableau.dataTypeEnum.int
+        },{
+            id: "effectiveDate",
+            alias: "effectiveDate",
+            dataType: tableau.dataTypeEnum.date
         },
         ];
         var tableSchema = {
@@ -28,19 +32,21 @@
     // Download the data
     myConnector.getData = function(table, doneCallback) {
 
-        $.getJSON("http://api.nbp.pl/api/exchangerates/tables/a/today/?format=json", function(resp) {
+        $.getJSON("https://api.nbp.pl/api/exchangerates/tables/a/today/?format=json", function(resp) {
             //var list = data.json(),       // what method to call? .feature .ts .list..
            
             let tableData = [];
             let data = resp[0].rates;
-
+            
             for (let item of data) {
                 tableData.push({
                    currency: item['currency'],
                    code: item['code'],
-                   mid: item['mid']
+                   mid: item['mid'],
+                   effectiveDate: resp[0]['effectiveDate'],            
               });
             }
+            
             console.log(data); 
             table.appendRows(tableData);
             doneCallback();
