@@ -13,7 +13,7 @@
         },{
             id: "mid",
             alias: "mid",
-            dataType: tableau.dataTypeEnum.int
+            dataType: tableau.dataTypeEnum.float
         },{
             id: "effectiveDate",
             alias: "effectiveDate",
