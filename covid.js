@@ -43,19 +43,20 @@
             alias: "CovidLUG",
             columns: cols
         };
-
+        
         schemaCallback([tableSchema]);
     };
 
     // Download the data
     myConnector.getData = function(table, doneCallback) {
 
-        $.getJSON("https://opendata.ecdc.europa.eu/covid19/casedistribution/json/", function(resp) {
+        $.getJSON("http://localhost:8889/opendata.ecdc.europa.eu/covid19/casedistribution/json", function(resp) {
             //var list = data.json(),       // what method to call? .feature .ts .list..
-            
-            var data = resp.records,        
+
+            var data = resp.records,                         
                  tableData = [];
-               
+                 
+                
         console.log(data) 
             // Iterate over the JSON object
             for (var i = 0; i < data.length; i++) {
@@ -67,18 +68,14 @@
                     "countryterritoryCode": data[i]["countryterritoryCode"],
                     "popData2019": data[i]["popData2019"],
                     "continentExp": data[i]["continentExp"],                  
-                    "Cumulative": data[i],
+                    "Cumulative": data[i],                   
                 });
-            }
-            var newArray = [].filter(function (el) {
-                return el.countriesAndTerritories = Poland;
-                      
-              });
+            }            
             table.appendRows(tableData);
             doneCallback();
         });
     };
-
+    
     tableau.registerConnector(myConnector);
 
     // Create event listeners for when the user submits the form
