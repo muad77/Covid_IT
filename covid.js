@@ -26,16 +26,12 @@
             dataType: tableau.dataTypeEnum.string
         },{
             id: "popData2019",
-            alias: "popData2019",
+            alias: "Polulacja",
             dataType: tableau.dataTypeEnum.int
         },{
             id: "continentExp",
             alias: "kontynent",
             dataType: tableau.dataTypeEnum.string
-        },{
-            id: "Cumulative_number_for_14_days_of_COVID-19_cases_per_100000",
-            alias: "Na 1000",
-            dataType: tableau.dataTypeEnum.int
         },
         ];
         var tableSchema = {
@@ -55,10 +51,10 @@
             let tableData = [];
             let data = resp.records;                                  
             
-                 const filteredData = data.filter(item => item.countriesAndTerritories === 'Poland')   
+                 const filteredData = data.filter(item => item.countriesAndTerritories === 'Italy')  // aby działał zamias data w for(let... filteretData)
                 
             // Iterate over the JSON object
-            for (let item of filteredData) {
+            for (let item of data) {
                 tableData.push({
                     dateRep: item["dateRep"],                
                     cases: item["cases"],
@@ -66,8 +62,7 @@
                     countriesAndTerritories: item["countriesAndTerritories"],                   
                     countryterritoryCode: item["countryterritoryCode"],
                     popData2019: item["popData2019"],
-                    continentExp: item["continentExp"],                  
-                    Cumulative: item["Cumulative_number_for_14_days_of_COVID-19_cases_per_100000"],                   
+                    continentExp: item["continentExp"],                                   
                 });
             }   
             console.log(data)          
