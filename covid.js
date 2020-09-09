@@ -33,7 +33,7 @@
             alias: "kontynent",
             dataType: tableau.dataTypeEnum.string
         },{
-            id: "Cumulative",
+            id: "Cumulative_number_for_14_days_of_COVID-19_cases_per_100000",
             alias: "Na 1000",
             dataType: tableau.dataTypeEnum.int
         },
@@ -50,27 +50,27 @@
     // Download the data
     myConnector.getData = function(table, doneCallback) {
 
-        $.getJSON("http://localhost:8889/opendata.ecdc.europa.eu/covid19/casedistribution/json", function(resp) {
+        $.getJSON("https://cors-anywhere.herokuapp.com/https://opendata.ecdc.europa.eu/covid19/casedistribution/json", function(resp) {
             //var list = data.json(),       // what method to call? .feature .ts .list..
-
-            var data = resp.records,                         
-                 tableData = [];
-                 
+            let tableData = [];
+            let data = resp.records;                                  
+            
+                 const filteredData = data.filter(item => item.countriesAndTerritories === 'Poland')   
                 
-        console.log(data) 
             // Iterate over the JSON object
-            for (var i = 0; i < data.length; i++) {
+            for (let item of filteredData) {
                 tableData.push({
-                    "dateRep": data[i]["dateRep"],                
-                    "cases": data[i]["cases"],
-                    "deaths": data[i]["deaths"],
-                    "countriesAndTerritories": data[i]["countriesAndTerritories"],                   
-                    "countryterritoryCode": data[i]["countryterritoryCode"],
-                    "popData2019": data[i]["popData2019"],
-                    "continentExp": data[i]["continentExp"],                  
-                    "Cumulative": data[i],                   
+                    dateRep: item["dateRep"],                
+                    cases: item["cases"],
+                    deaths: item["deaths"],
+                    countriesAndTerritories: item["countriesAndTerritories"],                   
+                    countryterritoryCode: item["countryterritoryCode"],
+                    popData2019: item["popData2019"],
+                    continentExp: item["continentExp"],                  
+                    Cumulative: item["Cumulative_number_for_14_days_of_COVID-19_cases_per_100000"],                   
                 });
-            }            
+            }   
+            console.log(data)          
             table.appendRows(tableData);
             doneCallback();
         });

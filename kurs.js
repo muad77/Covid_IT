@@ -32,19 +32,20 @@
     // Download the data
     myConnector.getData = function(table, doneCallback) {
 
-        $.getJSON("https://api.nbp.pl/api/exchangerates/tables/a/today/?format=json", function(resp) {
+        $.getJSON("https://api.nbp.pl/api/exchangerates/tables/a/?format=json", function(resp) {
             //var list = data.json(),       // what method to call? .feature .ts .list..
-           
+            
             let tableData = [];
             let data = resp[0].rates;
+            //const filteredData = data.filter(item => item.code === "USD"); //włączony to: for (let item of filteredData) {
             
             for (let item of data) {
                 tableData.push({
                    currency: item['currency'],
                    code: item['code'],
-                   mid: item['mid'],
-                   effectiveDate: resp[0]['effectiveDate'],            
-              });
+                   mid: item['mid'],                 
+                   effectiveDate: resp[0]['effectiveDate'],         
+              });            
             }
             
             console.log(data); 
