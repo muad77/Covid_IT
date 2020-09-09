@@ -7,10 +7,10 @@
         var cols = [{
             id: "dateRep",
             alias: "Data",
-            dataType: tableau.dataTypeEnum.date
+            dataType: tableau.dataTypeEnum.string
         },{
             id: "cases",
-            alias: "Ogółem hospitalizowani",
+            alias: "Zarażeni",
             dataType: tableau.dataTypeEnum.int
         },{
             id: "deaths",
