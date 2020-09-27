@@ -17,6 +17,16 @@
           alias: 'country',
           dataType: tableau.dataTypeEnum.string,
         },
+        {
+          id: 'updated',
+          alias: 'Aktualizacja',
+          dataType: tableau.dataTypeEnum.date,
+          },
+        {
+          id: 'label',
+          alias: 'Nazwa',
+          dataType: tableau.dataTypeEnum.string,
+            },
       ];
       var tableSchema = {
         id: 'Eurostat',
@@ -29,7 +39,7 @@
   
     // Download the data
     myConnector.getData = function (table, doneCallback) {
-      let url = 'http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/sts_copr_m?precision=1&unit=I15&s_adj=NSA&indic_bt=PROD&nace_r2=F&nace_r2=F_CC1&nace_r2=F_CC2';
+      let url = 'http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/teicp270?indic=TOTAL&precision=1&unit=PCH_Q4_NSA';
   
       JSONstat('https://cors-anywhere.herokuapp.com/' + url).then(function (resp) {
         let data = resp.toTable({ type: 'array' });
@@ -48,6 +58,9 @@
             value: row[indexes.Value],
             time: row[indexes.time],
             geo: row[indexes.geo],
+            updated: resp.updated,
+            label: resp['label'],
+            
           });
         }
   
