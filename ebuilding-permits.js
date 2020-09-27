@@ -9,12 +9,12 @@
       },
       {
         id: 'time',
-        alias: 'time',
+        alias: 'Time',
         dataType: tableau.dataTypeEnum.string,
       },
       {
         id: 'geo',
-        alias: 'country',
+        alias: 'Kraj',
         dataType: tableau.dataTypeEnum.string,
       },
       {
