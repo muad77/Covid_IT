@@ -30,7 +30,7 @@
       ];
       var tableSchema = {
         id: 'Eurostat',
-        alias: 'Eurostat',
+        alias: 'ehouse-price',
         columns: cols,
       };
   
