@@ -74,7 +74,7 @@
   // Create event listeners for when the user submits the form
   $(document).ready(function () {
     $('#submitButton').click(function () {
-      tableau.connectionName = 'Eurostat'; // This will be the data source name in Tableau
+      tableau.connectionName = 'ebuilding-permits'; // This will be the data source name in Tableau
       tableau.submit(); // This sends the connector object to Tableau
     });
   });
