@@ -45,7 +45,7 @@
     // Download the data
     myConnector.getData = function (table, doneCallback) {
 
-      let tableData = [];
+      
 
       let url = 'http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/teina010?na_item=B1GQ&precision=1&unit=MIO_EUR_SCA&s_adj=SCA';
   
@@ -53,7 +53,7 @@
         let data = resp.toTable({ type: 'array' });
         let columns = data.shift();
         let indexes = {};
-        
+        let tableData = [];
   
         // Store the index for each column so later they are not added to the wrong columns
         for (let c in columns) {
