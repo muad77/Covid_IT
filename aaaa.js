@@ -35,7 +35,7 @@
       ];
       var tableSchema = {
         id: 'Eurostat',
-        alias: 'ebuilding-prod',
+        alias: 'gdp-eur',
         columns: cols,
       };
   
@@ -44,13 +44,16 @@
   
     // Download the data
     myConnector.getData = function (table, doneCallback) {
-      let url = 'http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/teiis500?precision=1&unit=PCH_M12_CA&unit=PCH_M1_SCA&indic_bt=PROD&nace_r2=F';
+
+      let tableData = [];
+
+      let url = 'http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/teina010?na_item=B1GQ&precision=1&unit=MIO_EUR_SCA&s_adj=SCA';
   
       JSONstat('https://cors-anywhere.herokuapp.com/' + url).then(function (resp) {
         let data = resp.toTable({ type: 'array' });
         let columns = data.shift();
         let indexes = {};
-        let tableData = [];
+        
   
         // Store the index for each column so later they are not added to the wrong columns
         for (let c in columns) {
@@ -70,8 +73,9 @@
         }
   
         table.appendRows(tableData);
-        doneCallback();
+        
       });
+      doneCallback();
     };
   
     tableau.registerConnector(myConnector);
@@ -79,9 +83,8 @@
     // Create event listeners for when the user submits the form
     $(document).ready(function () {
       $('#submitButton').click(function () {
-        tableau.connectionName = 'ebuilding-prod'; // This will be the data source name in Tableau
+        tableau.connectionName = 'gdp-eur'; // This will be the data source name in Tableau
         tableau.submit(); // This sends the connector object to Tableau
       });
     });
   })();
-  
