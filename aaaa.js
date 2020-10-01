@@ -73,7 +73,7 @@
         }
   
         table.appendRows(tableData);
-       // doneCallback();
+        //doneCallback();
       });
       
       //let url = 'http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/tipsbp10?precision=1&unit=PC_GDP_3Y&partner=WRL_REST&stk_flow=BAL&s_adj=NSA&bop_item=CA';
@@ -102,10 +102,10 @@
         }
   
         table.appendRows(tableData);
-       // doneCallback();
+       doneCallback();
       });
 
-      doneCallback();
+      //doneCallback();
 
 
     };
