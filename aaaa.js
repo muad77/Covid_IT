@@ -76,13 +76,13 @@
        // doneCallback();
       });
       
-      let url = 'http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/tipsbp10?precision=1&unit=PC_GDP_3Y&partner=WRL_REST&stk_flow=BAL&s_adj=NSA&bop_item=CA';
+      //let url = 'http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/tipsbp10?precision=1&unit=PC_GDP_3Y&partner=WRL_REST&stk_flow=BAL&s_adj=NSA&bop_item=CA';
   
-      JSONstat('https://cors-anywhere.herokuapp.com/' + url).then(function (resp) {
+      JSONstat('https://cors-anywhere.herokuapp.com/' + 'http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/tipsbp10?precision=1&unit=PC_GDP_3Y&partner=WRL_REST&stk_flow=BAL&s_adj=NSA&bop_item=CA').then(function (resp) {
         let data = resp.toTable({ type: 'array' });
         let columns = data.shift();
         let indexes = {};
-        let tableData = [];
+        
   
         // Store the index for each column so later they are not added to the wrong columns
         for (let c in columns) {
