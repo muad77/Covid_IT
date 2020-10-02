@@ -119,7 +119,7 @@
         table.appendRows(tableData);
       });
 
-      //	Building productions
+      //	Production in construction"
       JSONstat('https://cors-anywhere.herokuapp.com/' + 'http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/teiis500?precision=1&unit=PCH_M12_CA&unit=PCH_M1_SCA&indic_bt=PROD&nace_r2=F').then(function (resp) {
         let data = resp.toTable({ type: 'array' });
         let columns = data.shift();
@@ -190,11 +190,11 @@
           });
         } 
            table.appendRows(tableData);
-        doneCallback();
+        //doneCallback();
       });
 
 
-      //doneCallback();
+      doneCallback();
     };
   
     tableau.registerConnector(myConnector);
