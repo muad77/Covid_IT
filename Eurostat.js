@@ -144,7 +144,7 @@
       });
 
 //	houses prices
-      JSONstat('https://cors-anywhere.herokuapp.com/' + 'http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/teiis500?precision=1&unit=PCH_M12_CA&unit=PCH_M1_SCA&indic_bt=PROD&nace_r2=F').then(function (resp) {
+      JSONstat('https://cors-anywhere.herokuapp.com/' + 'http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/teicp270?indic=TOTAL&precision=1&unit=PCH_Q4_NSA').then(function (resp) {
         let data = resp.toTable({ type: 'array' });
         let columns = data.shift();
         let indexes = {};
