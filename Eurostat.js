@@ -119,53 +119,53 @@
         table.appendRows(tableData);
       });
 
-  //	Building productions
-  JSONstat('https://cors-anywhere.herokuapp.com/' + 'http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/teiis500?precision=1&unit=PCH_M12_CA&unit=PCH_M1_SCA&indic_bt=PROD&nace_r2=F').then(function (resp) {
-    let data = resp.toTable({ type: 'array' });
-    let columns = data.shift();
-    let indexes = {};
-    let tableData = [];
+      //	Building productions
+      JSONstat('https://cors-anywhere.herokuapp.com/' + 'http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/teiis500?precision=1&unit=PCH_M12_CA&unit=PCH_M1_SCA&indic_bt=PROD&nace_r2=F').then(function (resp) {
+        let data = resp.toTable({ type: 'array' });
+        let columns = data.shift();
+        let indexes = {};
+        let tableData = [];
 
-    for (let c in columns) {
-      indexes[columns[c]] = +c;
-    }
+        for (let c in columns) {
+          indexes[columns[c]] = +c;
+        }
 
-    for (let row of data) {
-      tableData.push({
-        value: row[indexes.Value],
-        time: row[indexes.time],
-        geo: row[indexes.geo],
-        updated: resp.updated,
-        label: resp['label'],
-        unit: row[indexes.unit],
+        for (let row of data) {
+            tableData.push({
+            value: row[indexes.Value],
+            time: row[indexes.time],
+            geo: row[indexes.geo],
+            updated: resp.updated,
+            label: resp['label'],
+            unit: row[indexes.unit],
+          });
+        } 
+        table.appendRows(tableData);
       });
-    } 
-    table.appendRows(tableData);
-  });
 
 //	houses prices
-JSONstat('https://cors-anywhere.herokuapp.com/' + 'http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/teiis500?precision=1&unit=PCH_M12_CA&unit=PCH_M1_SCA&indic_bt=PROD&nace_r2=F').then(function (resp) {
-  let data = resp.toTable({ type: 'array' });
-  let columns = data.shift();
-  let indexes = {};
-  let tableData = [];
+      JSONstat('https://cors-anywhere.herokuapp.com/' + 'http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/teiis500?precision=1&unit=PCH_M12_CA&unit=PCH_M1_SCA&indic_bt=PROD&nace_r2=F').then(function (resp) {
+        let data = resp.toTable({ type: 'array' });
+        let columns = data.shift();
+        let indexes = {};
+        let tableData = [];
 
-  for (let c in columns) {
-    indexes[columns[c]] = +c;
-  }
+        for (let c in columns) {
+          indexes[columns[c]] = +c;
+        }
 
-  for (let row of data) {
-    tableData.push({
-      value: row[indexes.Value],
-      time: row[indexes.time],
-      geo: row[indexes.geo],
-      updated: resp.updated,
-      label: resp['label'],
-      unit: row[indexes.unit],
-    });
-  } 
-  table.appendRows(tableData);
-});
+        for (let row of data) {
+            tableData.push({
+            value: row[indexes.Value],
+            time: row[indexes.time],
+            geo: row[indexes.geo],
+            updated: resp.updated,
+            label: resp['label'],
+            unit: row[indexes.unit],
+          });
+        } 
+        table.appendRows(tableData);
+      });
 
 
       //	Gross domestic product, volumes (zmiana % kdk)
