@@ -118,11 +118,12 @@
             unit: row[indexes.unit],
           });
         } 
-        table.appendRows(tableData);
+           table.appendRows(tableData);
+           doneCallback();
       });
 
 
-      doneCallback();
+      //doneCallback();
     };
   
     tableau.registerConnector(myConnector);
