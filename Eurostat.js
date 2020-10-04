@@ -34,7 +34,7 @@
           },
       ];
       var tableSchema = {
-        id: 'Eurostat data',
+        id: 'Eurostat_data',
         alias: 'Eurostat',
         columns: cols,
       };
