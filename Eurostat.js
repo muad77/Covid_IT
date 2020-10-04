@@ -78,9 +78,9 @@
         let indexes = {};
         let tableData = [];
   
-        for (let c in columns) {
-          indexes[columns[c]] = +c;
-        }
+       // for (let c in columns) {
+       //   indexes[columns[c]] = +c;
+       // }
   
         for (let row of data) {
           tableData.push({
@@ -102,9 +102,9 @@
         let indexes = {};
         let tableData = [];
   
-        for (let c in columns) {
-          indexes[columns[c]] = +c;
-        }
+       // for (let c in columns) {
+       //   indexes[columns[c]] = +c;
+        //}
   
         for (let row of data) {
           tableData.push({
@@ -126,9 +126,9 @@
         let indexes = {};
         let tableData = [];
 
-        for (let c in columns) {
-          indexes[columns[c]] = +c;
-        }
+       // for (let c in columns) {
+      //    indexes[columns[c]] = +c;
+       // }
 
         for (let row of data) {
             tableData.push({
@@ -150,9 +150,9 @@
         let indexes = {};
         let tableData = [];
 
-        for (let c in columns) {
-          indexes[columns[c]] = +c;
-        }
+        //for (let c in columns) {
+       //   indexes[columns[c]] = +c;
+       // }
 
         for (let row of data) {
             tableData.push({
@@ -175,9 +175,9 @@
         let indexes = {};
         let tableData = [];
   
-        for (let c in columns) {
-          indexes[columns[c]] = +c;
-        }
+        //for (let c in columns) {
+       //   indexes[columns[c]] = +c;
+       // }
   
         for (let row of data) {
           tableData.push({
