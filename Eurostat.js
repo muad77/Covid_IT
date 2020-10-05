@@ -69,6 +69,7 @@
           });
         }  
         table.appendRows(tableData);
+        doneCallback();
       });
       
       //Current account balance - 3 year average  
@@ -93,6 +94,7 @@
           });
         } 
         table.appendRows(tableData);
+        doneCallback();
       });
       
       //	Building permits - quarterly data
@@ -117,6 +119,7 @@
           });
         } 
         table.appendRows(tableData);
+        doneCallback();
       });
      
       //	Production in construction"
@@ -141,6 +144,7 @@
           });
         } 
         table.appendRows(tableData);
+        doneCallback();
       });
 
       
@@ -166,6 +170,7 @@
           });
         } 
         table.appendRows(tableData);
+        doneCallback();
       });
 
       
@@ -191,11 +196,11 @@
           });
         } 
            table.appendRows(tableData);
-       //doneCallback();
+       doneCallback();
       });
 
 
-      doneCallback();
+      //doneCallback();
     };
   
     tableau.registerConnector(myConnector);
