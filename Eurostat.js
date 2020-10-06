@@ -44,7 +44,7 @@
   
     // Download the data
     myConnector.getData = function (table, doneCallback) {
-       
+      let tableData = [];
       //Gross domestic product, current prices  
       JSONstat('https://cors-anywhere.herokuapp.com/' + 'http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/teina010?na_item=B1GQ&precision=1&unit=MIO_EUR_SCA&s_adj=SCA').then(function(resp) {
         let data = resp.toTable({ type: 'array' });
