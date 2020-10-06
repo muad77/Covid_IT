@@ -54,7 +54,7 @@
   
         // Store the index for each column so later they are not added to the wrong columns
         for (let c in columns) {
-          indexes[columns[c]] = c;
+          indexes[columns[c]] = +c;
         }
   
         // Get the right value from each row (an array of values) based on the column index
@@ -80,7 +80,7 @@
         //let tableData = [];
   
         for (let c in columns) {
-          indexes[columns[c]] = c;
+          indexes[columns[c]] = +c;
         }
   
         for (let row of data) {
@@ -105,7 +105,7 @@
         //let tableData = [];
   
         for (let c in columns) {
-          indexes[columns[c]] = c;
+          indexes[columns[c]] = +c;
         }
   
         for (let row of data) {
@@ -130,7 +130,7 @@
         //let tableData = [];
 
         for (let c in columns) {
-          indexes[columns[c]] = c;
+          indexes[columns[c]] = +c;
         }
 
         for (let row of data) {
@@ -156,7 +156,7 @@
         //let tableData = [];
 
         for (let c in columns) {
-          indexes[columns[c]] = c;
+          indexes[columns[c]] = +c;
         }
 
         for (let row of data) {
@@ -182,7 +182,7 @@
         //let tableData = [];
   
         for (let c in columns) {
-          indexes[columns[c]] = c;
+          indexes[columns[c]] = +c;
         }
   
         for (let row of data) {
