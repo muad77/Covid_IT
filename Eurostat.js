@@ -153,7 +153,7 @@
         let data = resp.toTable({ type: 'array' });
         let columns = data.shift();
         let indexes = {};
-        let tableData = [];
+        //let tableData = [];
 
         for (let c in columns) {
           indexes[columns[c]] = c;
@@ -179,7 +179,7 @@
         let data = resp.toTable({ type: 'array' });
         let columns = data.shift();
         let indexes = {};
-        let tableData = [];
+        //let tableData = [];
   
         for (let c in columns) {
           indexes[columns[c]] = c;
