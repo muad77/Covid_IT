@@ -196,11 +196,11 @@
           });
         } 
            table.appendRows(tableData);
-       //doneCallback();
+       doneCallback();
       });
 
 
-      doneCallback();
+      //doneCallback();
     };
   
     tableau.registerConnector(myConnector);
