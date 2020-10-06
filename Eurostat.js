@@ -50,7 +50,7 @@
         let data = resp.toTable({ type: 'array' });
         let columns = data.shift();
         let indexes = {};
-        let tableData = [];
+        //let tableData = [];
   
         // Store the index for each column so later they are not added to the wrong columns
         for (let c in columns) {
@@ -77,7 +77,7 @@
         let data = resp.toTable({ type: 'array' });
         let columns = data.shift();
         let indexes = {};
-        let tableData = [];
+        //let tableData = [];
   
         for (let c in columns) {
           indexes[columns[c]] = c;
@@ -102,7 +102,7 @@
         let data = resp.toTable({ type: 'array' });
         let columns = data.shift();
         let indexes = {};
-        let tableData = [];
+        //let tableData = [];
   
         for (let c in columns) {
           indexes[columns[c]] = c;
@@ -127,7 +127,7 @@
         let data = resp.toTable({ type: 'array' });
         let columns = data.shift();
         let indexes = {};
-        let tableData = [];
+        //let tableData = [];
 
         for (let c in columns) {
           indexes[columns[c]] = c;
