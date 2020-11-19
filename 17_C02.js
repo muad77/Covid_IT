@@ -23,7 +23,7 @@
           dataType: tableau.dataTypeEnum.date,
           },
         {
-          id: 'label',
+          id: 'dimension',
           alias: 'Nazwa',
           dataType: tableau.dataTypeEnum.string,
         },
@@ -64,7 +64,7 @@
             time: row[indexes.time],
             geo: row[indexes.geo],
             updated: resp.updated,
-            label: resp['label'],
+            dimension: row[indexes.airpol],
             unit: row[indexes.unit],
           });
         }
