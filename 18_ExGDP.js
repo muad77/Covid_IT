@@ -35,7 +35,7 @@
       ];
       var tableSchema = {
         id: 'Eurostat',
-        alias: '17_C02',
+        alias: '18_ExGDP',
         columns: cols,
       };
   
@@ -44,7 +44,7 @@
   
     // Download the data
     myConnector.getData = function (table, doneCallback) {
-      let url = 'http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/env_air_gge?airpol=CO2&airpol=GHG&precision=1&src_crf=TOTX4_MEMONIA&unit=THS_T';
+      let url = 'http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/tet00003?na_item=P6&precision=1&unit=PC_GDP';
   
       JSONstat('https://cors-anywhere.herokuapp.com/' + url).then(function (resp) {
         let data = resp.toTable({ type: 'array' });
@@ -79,7 +79,7 @@
     // Create event listeners for when the user submits the form
     $(document).ready(function () {
       $('#submitButton').click(function () {
-        tableau.connectionName = '17_C02'; // This will be the data source name in Tableau
+        tableau.connectionName = '18_ExGDP'; // This will be the data source name in Tableau
         tableau.submit(); // This sends the connector object to Tableau
       });
     });
