@@ -46,7 +46,7 @@
     myConnector.getData = function (table, doneCallback) {
       let url = 'http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/tps00001?indic_de=JAN&precision=1';
   
-      JSONstat('https://cors-anywhere.herokuapp.com/' + url).then(function (resp) {
+      JSONstat('https://thingproxy.freeboard.io/fetch/' + url).then(function (resp) {
         let data = resp.toTable({ type: 'array' });
         let columns = data.shift();
         let indexes = {};
