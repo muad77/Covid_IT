@@ -46,7 +46,7 @@
     myConnector.getData = function (table, doneCallback) {
       let url = 'http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/earn_mw_cur?precision=1&currency=EUR';
   
-      JSONstat('https://cors-anywhere.herokuapp.com/' + url).then(function (resp) {
+      JSONstat('https://api.codetabs.com/v1/proxy?quest=' + url).then(function (resp) {
         let data = resp.toTable({ type: 'array' });
         let columns = data.shift();
         let indexes = {};

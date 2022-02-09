@@ -52,6 +52,7 @@
         let indexes = {};
         let tableData = [];
         //  https://thingproxy.freeboard.io/fetch/
+        //  https://muad77.github.io/Covid_IT/01_Population.html
         // Store the index for each column so later they are not added to the wrong columns
         for (let c in columns) {
           indexes[columns[c]] = +c;

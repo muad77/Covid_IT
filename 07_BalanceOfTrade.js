@@ -46,7 +46,7 @@
     myConnector.getData = function (table, doneCallback) {
       let url = 'http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/teiet215?precision=1&bclas_bec=TOTAL&partner=WORLD&indic_et=TRD_VAL_SCA&stk_flow=BAL_RT';
   
-      JSONstat('https://cors-anywhere.herokuapp.com/' + url).then(function (resp) {
+      JSONstat('https://api.codetabs.com/v1/proxy?quest=' + url).then(function (resp) {
         let data = resp.toTable({ type: 'array' });
         let columns = data.shift();
         let indexes = {};
