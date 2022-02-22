@@ -35,7 +35,7 @@
       ];
       var tableSchema = {
         id: 'Eurostat',
-        alias: 'ebuilding-prod',
+        alias: '01_building-prod',
         columns: cols,
       };
   
@@ -46,7 +46,7 @@
     myConnector.getData = function (table, doneCallback) {
       let url = 'http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/teiis500?precision=1&unit=PCH_M12_CA&unit=PCH_M1_SCA&indic_bt=PROD&nace_r2=F';
   
-      JSONstat('https://cors-anywhere.herokuapp.com/' + url).then(function (resp) {
+      JSONstat('https://api.codetabs.com/v1/proxy?quest' + url).then(function (resp) {
         let data = resp.toTable({ type: 'array' });
         let columns = data.shift();
         let indexes = {};
@@ -79,7 +79,7 @@
     // Create event listeners for when the user submits the form
     $(document).ready(function () {
       $('#submitButton').click(function () {
-        tableau.connectionName = 'ebuilding-prod'; // This will be the data source name in Tableau
+        tableau.connectionName = '01_building-prod'; // This will be the data source name in Tableau
         tableau.submit(); // This sends the connector object to Tableau
       });
     });

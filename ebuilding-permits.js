@@ -41,7 +41,7 @@
   myConnector.getData = function (table, doneCallback) {
     let url = 'http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/sts_cobp_q?precision=1&unit=PCH_SM&s_adj=NSA&indic_bt=PNUM&nace_r2=F_CC11_X_CC113';
 
-    JSONstat('https://cors-anywhere.herokuapp.com/' + url).then(function (resp) {
+    JSONstat('https://api.codetabs.com/v1/proxy?quest' + url).then(function (resp) {
       let data = resp.toTable({ type: 'array' });
       let columns = data.shift();
       let indexes = {};

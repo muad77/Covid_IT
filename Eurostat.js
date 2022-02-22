@@ -46,7 +46,7 @@
     myConnector.getData = function (table, doneCallback) {
       let tableData = [];
       //Gross domestic product, current prices  
-      JSONstat('https://cors-anywhere.herokuapp.com/' + 'http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/teina010?na_item=B1GQ&precision=1&unit=MIO_EUR_SCA&s_adj=SCA').then(function(resp) {
+      JSONstat('https://api.codetabs.com/v1/proxy?quest' + 'http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/teina010?na_item=B1GQ&precision=1&unit=MIO_EUR_SCA&s_adj=SCA').then(function(resp) {
         let data = resp.toTable({ type: 'array' });
         let columns = data.shift();
         let indexes = {};
@@ -54,7 +54,7 @@
   
         // Store the index for each column so later they are not added to the wrong columns
         for (let c in columns) {
-          indexes[columns[c]] = +c;
+          indexes[columns[c]] = ++c;
         }
   
         // Get the right value from each row (an array of values) based on the column index
@@ -156,7 +156,7 @@
         //let tableData = [];
 
         for (let c in columns) {
-          indexes[columns[c]] = +c;
+           indexes[columns[c]] = +c;
         }
 
         for (let row of data) {

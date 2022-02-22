@@ -46,7 +46,7 @@
     myConnector.getData = function (table, doneCallback) {
       let url = 'http://ec.europa.eu/eurostat/wdds/rest/data/v2.1/json/en/teina011?na_item=B1GQ&precision=1&unit=PCH_Q4_SCA';
   
-      JSONstat('https://cors-anywhere.herokuapp.com/' + url).then(function (resp) {
+      JSONstat('https://api.codetabs.com/v1/proxy?quest' + url).then(function (resp) {
         let data = resp.toTable({ type: 'array' });
         let columns = data.shift();
         let indexes = {};
